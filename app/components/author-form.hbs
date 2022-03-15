@@ -1,0 +1,11 @@
+<form {{on "submit" this.onCreateAuthor}}>
+    <label for="givenName">Given Name</label>
+    <Input id="givenName" 
+           @type="text"
+           @value={{this.givenName}}/>
+    <label for="familyName">Family Name</label> 
+    <Input id="familyName"
+            @type="text"
+            @value={{this.familyName}}/>
+    <button type="submit">Create Author</button>
+</form>

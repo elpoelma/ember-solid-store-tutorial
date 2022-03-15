@@ -1,0 +1,8 @@
+{{page-title "Books"}}
+<h2>Books</h2>
+<ul>
+{{#each @model.books as |book|}}
+<li>{{book.headLine}} {{book.numberOfPages}} <button type="button" {{on "click" (fn this.deleteBook book)}}>Delete</button></li>
+{{/each}}
+</ul>
+<BookForm @onSubmit={{this.createBook}} @authors={{@model.authors}}/>

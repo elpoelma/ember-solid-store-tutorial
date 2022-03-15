@@ -1,0 +1,17 @@
+<form {{on "submit" this.onCreateBook}}>
+    <label for="title">Title</label>
+    <Input id="title" 
+           @type="text"
+           @value={{this.headLine}}/>
+    <label for="numberOfPages">Page Count</label> 
+    <Input id="numberOfPages"
+            @type="text"
+            @value={{this.numberOfPages}}/>
+    <select {{on "change" this.setAuthor}} >
+        <option value="">Select...</option>
+        {{#each @authors as |author|}}
+            <option value={{author.uri}}>{{author.givenName}}</option>
+        {{/each}}
+    </select>
+    <button type="submit">Create Book</button>
+</form>
